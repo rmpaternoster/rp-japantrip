@@ -498,7 +498,7 @@
     <div class="header-flag">🇯🇵</div>
     <div class="header-text">
       <h1>Viaje a Japón 2026</h1>
-      <p>30 Jul – 21 Ago &nbsp;·&nbsp; 23 días</p>
+      <p>30 Jul – 21 Ago &nbsp;·&nbsp; 23 días &nbsp;·&nbsp; Familia Paternoster</p>
     </div>
     <div class="legend">
       <div class="legend-item">
@@ -568,7 +568,7 @@
       {
         date: '30 Jul', wd: 'Jue', city: 'flight',
         title: 'Vuelo Madrid → Tokio',
-        note: 'Sale MAD 12:30h · Vuelo a Tokio',
+        note: 'Sale MAD 12:30h · JAL JL7089 · Loc. 9TGLXF',
         acts: []
       },
       {
@@ -1051,7 +1051,7 @@
           {
             e: '✈️', name: 'Vuelo ITM → Okinawa', type: 'Transporte', stars: 0, lat: 26.195, lng: 127.646,
             desc: 'JAL2087 · Sale Itami (ITM) 14:50h. OJO: el aeropuerto es ITAMI, no Kansai. Aprox 40 min desde Kioto centro.',
-            tips: 'Llegar a Itami con al menos 90 min de antelación.'
+            tips: 'Localizador nosotros: 99S26D · Papás: 99XG7B. Mismo vuelo. Llegar a Itami con al menos 90 min de antelación.'
           },
           {
             e: '🚗', name: 'Alquiler de coche en OKA', type: 'Transporte', stars: 0, lat: 26.1946, lng: 127.6489,
@@ -1164,7 +1164,7 @@
       {
         date: '10 Ago', wd: 'Lun', city: 'okinawa',
         title: 'Último Buceo · Despedida Papás ✈️',
-        note: 'Papás: vuelo sale OKA 19:50h → Narita',
+        note: 'Papás: Jetstar TP5L7T sale OKA 19:50h → Narita',
         acts: [
           {
             e: '🤿', name: 'Último Buceo — Mañana', type: 'Buceo', stars: 2, lat: 26.4204, lng: 127.7148,
@@ -1178,19 +1178,19 @@
           },
           {
             e: '✈️', name: 'Vuelo Papás: OKA → Narita', type: 'Transporte papás', stars: 0, lat: 26.1946, lng: 127.6489,
-            desc: 'Llevar a los papás al aeropuerto OKA. Sale 19:50h → llega Narita. Hotel: Narita Tobu (shuttle desde T1 parada 16 y T2 parada 25).',
-            tips: 'Salir del resort a las 17:00h para llegar con margen.'
+            desc: 'Llevar a los papás al aeropuerto OKA. Jetstar TP5L7T, sale 19:50h → llega Narita. Hotel: Narita Tobu (shuttle desde T1 parada 16 y T2 parada 25).',
+            tips: 'Localizador: TP5L7T. Vuelo al día siguiente desde Narita a Madrid (localizador M2YG7). Salir del resort a las 17:00h para llegar con margen.'
           },
         ]
       },
       {
         date: '11 Ago', wd: 'Mar', city: 'osaka',
         title: 'Okinawa → Osaka · Llegada',
-        note: 'Check-out Hoshinoya · Vuelo OKA 17:50h → ITM',
+        note: 'Check-out Hoshinoya · JAL2088 sale OKA 17:50h → ITM',
         acts: [
           {
             e: '✈️', name: 'Vuelo OKA → Osaka (ITM)', type: 'Transporte', stars: 0, lat: 34.7855, lng: 135.4386,
-            desc: 'Sale OKA 17:50h → llega ITM aprox 19:45h. Llegada tardía a Osaka.',
+            desc: 'JAL2088 · Sale OKA 17:50h → llega ITM aprox 19:45h. Llegada tardía a Osaka.',
             tips: 'Llegar al hotel, cenar algo cerca y descansar. El día siguiente empieza fuerte con la excursión a Nara.'
           },
         ]
@@ -1401,11 +1401,11 @@
       {
         date: '21 Ago', wd: 'Vie', city: 'flight',
         title: 'Vuelta a Madrid ✈️',
-        note: 'Iberia · Vuelo de vuelta a Madrid',
+        note: 'Iberia · Localizador M2XDH',
         acts: [
           {
             e: '✈️', name: 'Vuelo Tokio → Madrid', type: 'Transporte', stars: 0, lat: 35.6895, lng: 139.6917,
-            desc: 'Vuelo de vuelta a casa. Iberia.',
+            desc: 'Vuelo de vuelta a casa. Iberia, localizador M2XDH.',
             tips: 'Narita está a 1h de Tokio. Recomendable el tren Narita Express (N\'EX) desde Shinjuku o Shinagawa. Salir del hotel con al menos 3h de antelación.'
           },
         ]
@@ -1624,8 +1624,7 @@
       // Google Maps link
       const mapsBtn = document.getElementById('d-maps');
       if (act.lat && act.lng) {
-        const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(act.name)}&query_place_id=&center=${act.lat},${act.lng}`;
-        mapsBtn.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(act.name + ' ' + (act.type || ''))}@${act.lat},${act.lng}`;
+        mapsBtn.href = `https://www.google.com/maps/search/${encodeURIComponent(act.name)}/@${act.lat},${act.lng},17z`;
         mapsBtn.style.display = 'inline-flex';
         mapsBtn.style.borderColor = col;
         mapsBtn.style.color = col;
